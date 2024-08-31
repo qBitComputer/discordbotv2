@@ -1,22 +1,23 @@
 package me.qbitcomputer.commands;
 
-import io.github.cdimascio.dotenv.Dotenv;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 import java.awt.*;
 
-public class Sadcat extends ListenerAdapter {
+public class Drake extends ListenerAdapter {
     @Override
     public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
-        if (event.getName().equals("sadcat")) {
-            String text1 = event.getOption("text").getAsString();
-            String text = text1.replaceAll("\\s", "+");
+        if (event.getName().equals("drake")) {
+            String text1 = event.getOption("text1").getAsString();
+            String text12 = text1.replaceAll("\\s", "+");
+            String text2 = event.getOption("text2").getAsString();
+            String text22 = text1.replaceAll("\\s", "+");
             EmbedBuilder embed = new EmbedBuilder();
-            embed.setTitle("Here is your SadCat meme!");
+            embed.setTitle("Here is your drake meme!");
             embed.setColor(Color.decode("#0013ca"));
-            embed.setImage("https://api.popcat.xyz/sadcat?text=" + text);
+            embed.setImage("https://api.popcat.xyz/drake?text1=" + text12 + "&text2=" + text22);
             event.replyEmbeds(embed.build()).queue();
         }
     }

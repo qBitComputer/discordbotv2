@@ -19,7 +19,11 @@ public class slashCommandManager extends ListenerAdapter {
         commands.add(Commands.slash("jail", "jail someone")
                 .addOption(OptionType.USER, "user", "Choose someone to jail", true));
         commands.add(Commands.slash("sadcat", "make a sadcat meme")
-                .addOption(OptionType.STRING, "text1", "text1", true));
+                .addOption(OptionType.STRING, "text", "text", true));
+        commands.add(Commands.slash("oogway", "make a oogway meme")
+                .addOption(OptionType.STRING, "text", "text", true));
+        commands.add(Commands.slash("drake", "make a drake meme")
+                .addOption(OptionType.STRING, "text1", "text1", true).addOption(OptionType.STRING, "text2", "text2", true));
         event.getGuild().updateCommands().addCommands(commands).queue();
     }
 }
