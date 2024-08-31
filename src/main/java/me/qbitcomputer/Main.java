@@ -1,12 +1,15 @@
 package me.qbitcomputer;
 
 import io.github.cdimascio.dotenv.Dotenv;
+import me.qbitcomputer.commands.Ping;
+import me.qbitcomputer.managers.slashCommandManager;
+import net.dv8tion.jda.api.OnlineStatus;
+import net.dv8tion.jda.api.entities.Activity;
+import net.dv8tion.jda.api.requests.GatewayIntent;
+import net.dv8tion.jda.api.sharding.DefaultShardManagerBuilder;
 import net.dv8tion.jda.api.sharding.ShardManager;
 
 import javax.security.auth.login.LoginException;
-
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
 
 
@@ -23,7 +26,8 @@ public class Main {
         builder.enableIntents(GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_MESSAGES, GatewayIntent.DIRECT_MESSAGES, GatewayIntent.MESSAGE_CONTENT);
         shardManager = builder.build();
         shardManager.addEventListener(
-                new slashcommandmanager()
+                new slashCommandManager(),
+                new Ping()
         );
 
 
