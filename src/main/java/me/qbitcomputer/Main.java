@@ -2,7 +2,9 @@ package me.qbitcomputer;
 
 import io.github.cdimascio.dotenv.Dotenv;
 import me.qbitcomputer.commands.Drip;
+import me.qbitcomputer.commands.Jail;
 import me.qbitcomputer.commands.Ping;
+import me.qbitcomputer.commands.Sadcat;
 import me.qbitcomputer.managers.slashCommandManager;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
@@ -29,7 +31,9 @@ public class Main {
         shardManager.addEventListener(
                 new slashCommandManager(),
                 new Ping(),
-                new Drip()
+                new Drip(),
+                new Jail(),
+                new Sadcat()
         );
 
 

@@ -16,6 +16,10 @@ public class slashCommandManager extends ListenerAdapter {
         commands.add(Commands.slash("ping", "You can use this command to make sure the bot is alive :)"));
         commands.add(Commands.slash("drip", "Drippify someone")
                 .addOption(OptionType.USER, "user", "Choose someone to drippify", true));
+        commands.add(Commands.slash("jail", "jail someone")
+                .addOption(OptionType.USER, "user", "Choose someone to jail", true));
+        commands.add(Commands.slash("sadcat", "make a sadcat meme")
+                .addOption(OptionType.STRING, "text1", "text1", true));
         event.getGuild().updateCommands().addCommands(commands).queue();
     }
 }
